@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="cms.css" />
+  </head>
+  <body>
+    <div id="topBar">
+      <div style="flex-direction: row">
+        <img src="./logo_transparent.png" width="100" height="100" />
+        <div id="topBarText">
+          <text>CANTEEN MANAGER SYSTEM</text>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top: 10px; width: 100%">
+      <div
+        style="
+          display: flex;
+          justify-content: flex-end;
+          background-color: transparent;
+          padding-right: 20px;
+        "
+      >
+        <button id="addText" onclick="showOverlay()">+ Add Credentials</button>
+      </div>
+      <div class="overlay" id="overlay">
+        <div class="form">
+          <div style="display: flex; justify-content: flex-end">
+            <button
+              onclick="hideOverlay()"
+              style="border-width: 0; background-color: transparent"
+            >
+              <text
+                style="
+                  font-weight: bold;
+                  font-size: 20px;
+                  cursor: pointer;
+                  color: black;
+                "
+                >X</text
+              >
+            </button>
+          </div>
+          <h2>Enter details:</h2>
+          <form id="overLayFrom">
+            <label for="id">ID:</label>
+            <input
+              type="text"
+              required
+              id="id"
+              name="id"
+              placeholder="Enter your Manger ID..."
+            />
+            <label for="password">Password:</label>
+            <div class="input-group">
+              <input
+                type="password"
+                required
+                id="apwd"
+                name="password"
+                placeholder="Enter your password..."
+              />
+              <button id="ashow" type="button" onclick="{show('a')}">
+                Show
+              </button>
+            </div>
+            <label for="dropdown">Select Canteen:</label>
+            <select id="dropdown" name="canteen" required>
+              <option value="">Select one canteen</option>
+              <option value="MBA">MBA</option>
+              <option value="IT">IT</option>
+              <option value="MAIN">MAIN</option>
+            </select>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      <table>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+    <script src="cms.js"></script>
+    <script>
+      const form = document.getElementById("overLayFrom");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const formData = new FormData(form);
+        let id = Object.fromEntries(formData).id;
+        let pwd = Object.fromEntries(formData).password;
+        let canteen = Object.fromEntries(formData).canteen;
+        hideOverlay();
+        addText(id, pwd, canteen);
+      });
+    </script>
+  </body>
+</html>

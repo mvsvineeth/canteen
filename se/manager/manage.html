@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="manage.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage</title>
+  </head>
+  <body>
+    <div id="topBar">
+      <div style="flex-direction: row">
+        <img src="../logo_transparent.png" width="100" height="100" />
+        <div id="topBarText">
+          <text id="tetxt"></text>
+        </div>
+        <div style="display: flex; min-width: 100%; justify-content: flex-end">
+          <text id="welcome"></text>
+        </div>
+      </div>
+    </div>
+    <center>
+      <div class="search-container">
+        <input class="search-input" type="text" placeholder="Search..." />
+        <button class="search-button" type="button">Search</button>
+      </div>
+      <table class="my-table" id="display">
+        <thead>
+          <tr>
+            <th>ITEM</th>
+            <th>QTY</th>
+            <th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </center>
+  </body>
+  <script>
+    var w = localStorage.getItem("canteen") + " CANTEEN MANAGEMENT";
+    w = w.toUpperCase();
+    document.getElementById("tetxt").innerHTML = w;
+    var j = "Hello " + localStorage.getItem("id") + ",";
+    document.getElementById("welcome").innerHTML = j;
+  </script>
+  <script>
+    function increment() {
+      var input = document.getElementById("myInput");
+      input.stepUp();
+    }
+
+    function decrement() {
+      var input = document.getElementById("myInput");
+      input.stepDown();
+    }
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+  <script src="manage.js"></script>
+</html>

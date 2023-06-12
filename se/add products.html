@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Products</title>
+    <link rel="stylesheet" href="add products.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="topBar">
+      <div style="flex-direction: row">
+        <img src="./logo_transparent.png" width="100" height="100" />
+        <div id="topBarText">
+          <text>ADD PRODUCTS</text>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <form action="#" class="form active" id="login">
+          <label for="email">Item ID</label>
+          <div class="pass-reset">
+            <input
+              type="number"
+              name="id"
+              class="email"
+              id="emailInput"
+              required
+            />
+          </div>
+
+          <label for="password">Item Name</label>
+          <div class="pass-reset">
+            <input
+              type="text"
+              class="password"
+              name="name"
+              id="password"
+              required
+            />
+          </div>
+
+          <label for="itemtype">Item Type</label>
+          <select
+            id="itemtype"
+            name="itemtype"
+            class="pass-reset"
+            style="padding: 3%"
+            required
+          >
+            <option value="">Select Item Type</option>
+            <option value="VEG">VEG</option>
+            <option value="NON-VEG">NON-VEG</option>
+            <option value="EGG">EGG</option>
+          </select>
+
+          <label for="itemprice">Item Price</label>
+          <div class="pass-reset">
+            <input
+              type="number"
+              class="itemprice"
+              name="itemprice"
+              id="itemprice"
+              required
+            />
+          </div>
+
+          <label for="ItemAvail">Item Availability</label>
+          <input
+            type="checkbox"
+            class="ItemAvail"
+            name="ItemAvaile1"
+            id="ItemAvail"
+            value="main"
+          />
+          <label
+            for="ItemAvail"
+            style="font-size: 15px; margin-left: 55%; margin-top: -5%"
+            class="mk"
+            >MAIN CANTEEN</label
+          >
+          <input
+            type="checkbox"
+            class="ItemAvail"
+            name="ItemAvaile2"
+            id="ItemAvail"
+            value="it"
+          />
+          <label
+            for="ItemAvail"
+            style="font-size: 15px; margin-left: 55%; margin-top: -5%"
+            >IT CANTEEN</label
+          >
+          <input
+            type="checkbox"
+            class="ItemAvail"
+            name="ItemAvaile3"
+            id="ItemAvail"
+            value="mba"
+          />
+          <label
+            for="ItemAvail"
+            style="font-size: 15px; margin-left: 55%; margin-top: -5%"
+            >MBA CANTEEN</label
+          >
+
+          <label for="itemimg">Item Image</label>
+          <input type="file" id="file-input" name="file" />
+
+          <br /><br />
+
+          <button class="btn btn-login" type="submit">
+            <strong>Add Product</strong>
+          </button>
+          <p class="or"></p>
+        </form>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+    <script src="add product.js"></script>
+  </body>
+</html>

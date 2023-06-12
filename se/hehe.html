@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Canteen Management</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+
+      h1 {
+        color: #333333;
+      }
+
+      .canteen-list {
+        margin: 20px;
+      }
+
+      .canteen-list label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      .canteen-list input[type="checkbox"] {
+        margin-right: 5px;
+      }
+
+      .selected-canteens {
+        margin-top: 20px;
+      }
+
+      .selected-canteens label {
+        display: block;
+      }
+
+      .submit-btn {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Canteen Selection</h1>
+
+    <form id="canteenForm">
+      <div class="canteen-list" style="display: flex">
+        <input type="checkbox" name="canteen" value="main" class="11" /> Main
+        <input type="checkbox" name="canteen" value="it" class="11" /> IT
+        <input type="checkbox" name="canteen" value="mba" class="11" /> MBA
+      </div>
+
+      <div class="selected-canteens">
+        <h3>Selected Canteens:</h3>
+        <div id="selectedCanteensList"></div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+
+    <script>
+      // Array to store initially selected canteens
+      const initiallySelectedCanteens = ["main", "mba"];
+
+      // Array to store user's updated selection of canteens
+      const updatedSelectedCanteens = [];
+
+      // Get the form element
+      const form = document.getElementById("canteenForm");
+
+      // Add event listener to the form submit event
+      form.addEventListener("submit", handleSubmit);
+
+      function handleSubmit(event) {
+        event.preventDefault();
+
+        // Get the selected checkboxes
+        const checkboxes = document.getElementsByClassName("11");
+        updatedSelectedCanteens.length = 0; // Clear the array before updating
+        Array.from(checkboxes).forEach((checkbox) => {
+          if (checkbox.checked) {
+            updatedSelectedCanteens.push(checkbox.value);
+          }
+        });
+
+        // Display the selected canteens in an alert message
+        alert("Selected Canteens: " + updatedSelectedCanteens.join(", "));
+        alert(updatedSelectedCanteens.length);
+        alert(updatedSelectedCanteens[0]);
+
+        // Display the updated selected canteens in the console
+        console.log("Updated Selected Canteens:", updatedSelectedCanteens);
+      }
+
+      // Get the checkbox elements
+      const checkboxes = document.getElementsByClassName("11");
+      console.log(checkboxes);
+      // Set the initially selected canteens as checked
+      Array.from(checkboxes).forEach((checkbox) => {
+        if (initiallySelectedCanteens.includes(checkbox.value)) {
+          checkbox.checked = true;
+        }
+      });
+    </script>
+  </body>
+</html>

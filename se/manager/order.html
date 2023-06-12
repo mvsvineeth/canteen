@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="order.css" />
+    <link rel="stylesheet" href="../adminportal.css" />
+    <style>
+      td {
+        padding: 10px;
+        font-weight: bold;
+        font-size: 20px;
+      }
+      td button {
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="topBar">
+      <div style="flex-direction: row">
+        <img src="../logo_transparent.png" width="100" height="100" />
+        <div id="topBarText">
+          <text>ORDER MANAGMENT</text>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="add">
+      <div style="text-align: center; width: 100%">
+        <center>
+          <table style="width: 90%; text-align: center; height: 80%">
+            <tr>
+              <td>Order ID: HJ456789</td>
+              <td>time:16:04:00</td>
+            </tr>
+            <tr>
+              <td>Panner Biryani</td>
+              <td>X2</td>
+            </tr>
+            <tr>
+              <td>Egg Biryani</td>
+              <td>X2</td>
+            </tr>
+            <tr>
+              <td>Mango Juice</td>
+              <td>X2</td>
+            </tr>
+            <tr>
+              <td>
+                <button
+                  style="background-color: green"
+                  onclick="alert('accepted')"
+                >
+                  ACCEPT
+                </button>
+              </td>
+              <td>
+                <button style="background-color: red" onclick="alert('denied')">
+                  DENY
+                </button>
+              </td>
+            </tr>
+          </table>
+        </center>
+      </div>
+    </div>
+  </body>
+</html>
